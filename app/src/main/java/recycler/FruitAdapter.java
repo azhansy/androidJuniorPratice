@@ -1,10 +1,14 @@
-package RecyclerView;
+package recycler;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.azhansy.juniordemo.R;
 
 import java.util.List;
 

@@ -1,21 +1,25 @@
-package RecyclerView;
+package recycler;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.azhansy.juniordemo.R;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class RecyclerViewDemoActivity extends AppCompatActivity {
     private List<Fruit> fruitList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_recycler_view_demo);
         initFruit();
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
@@ -25,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initFruit() {
-        for (int i = 0; 1 < 2; i++) {
+        for (int i = 0; i < 2; i++) {
             Fruit apple = new Fruit("apple", R.drawable.ic_launcher_background);
             fruitList.add(apple);
             Fruit banana = new Fruit("banana", R.drawable.ic_launcher_background);
@@ -48,5 +52,10 @@ public class MainActivity extends AppCompatActivity {
             fruitList.add(mango);
 
         }
+    }
+
+    public static void launch(Context context) {
+        Intent intent = new Intent(context,RecyclerViewDemoActivity.class);
+        context.startActivity(intent);
     }
 }

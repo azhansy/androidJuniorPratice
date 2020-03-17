@@ -1,4 +1,4 @@
-package RecyclerView;
+package recycler;
 
 public class Fruit {
     private String name;
